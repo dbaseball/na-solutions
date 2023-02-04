@@ -1,0 +1,40 @@
+
+
+// .na-hp-background {
+// // background: linear-gradient(#5f6a61,#b0b8b1);
+// // color: #fff;
+
+// }
+
+.help-card {
+  width: 300px;
+  margin-right: 40px;
+  margin-top: 40px;
+  border-radius:1rem;
+  border: solid 2px;
+  border-color: royalblue;
+}
+
+.hero {
+  display: flex;
+  flex-direction: row;
+  justify-content:center;
+  align-items:center;
+  background-color:cornflowerblue;
+
+  // fill: #ffffff;
+  // stroke: #ffffff;
+
+}
+
+.title {
+  display: block;
+  text-align: center;
+  margin: auto;
+}
+.features {
+display: flex;
+justify-content: center;
+align-items:stretch;
+flex-wrap: wrap;
+}

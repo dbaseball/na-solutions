@@ -1,0 +1,47 @@
+<div class='meet-page' color="primary">
+  <h2>Meeting List</h2>
+
+  <mat-tab-group  [selectedIndex]="wd">
+    <mat-tab *ngFor="let weekday of dayOfWeek">
+        <ng-template mat-tab-label> {{weekday.text}}</ng-template>
+        <div *ngFor="let item of meetingList" class="flex-container">
+          <div *ngIf="item.weekday_tinyint === weekday.d">
+              <mat-card class="flex-item">
+              <mat-card-header>
+                <div mat-card-avatar class="na-image" style="width: 60px; height: 60px">
+                  <mat-icon svgIcon="calogo" style="width:60px; height: 60px;"></mat-icon>
+                </div>
+                <mat-card-title>{{ item.meeting_name}} </mat-card-title>
+                <mat-card-subtitle>{{item.location_text}}</mat-card-subtitle>
+                <mat-card-subtitle><b>{{item.location_street}}, {{ item.location_municipality }}, {{item.location_province}}, {{item.location_postal_code_1}}</b></mat-card-subtitle>
+              </mat-card-header>
+              <!-- 40.12092858, -75.50196294 -->
+              <mat-card-content>
+              <div><b>{{weekday.ltext}} {{startTime(item.start_time, item.duration_time)}}</b></div>
+              <div>Info: {{item.location_info}}</div>
+              <div>Formats: {{item.formats}}</div>
+              <div>Distance:{{getDistance(item.latitude, position.lat.toString(), item.longitude, position.long.toString())}} miles</div>
+
+              <mat-divider></mat-divider>
+            </mat-card-content>
+              <mat-card-actions>
+                <a mat-raised-button title="Directions" color="primary" aria-label="Example"
+                  href="https://www.google.com/maps/search/?api=1&amp;query={{item.latitude}}, {{item.longitude}}&amp;query=40.067419, -75.5668862">
+                  <mat-icon>location_on</mat-icon>
+                </a>
+                <a mat-raised-button color="primary" *ngIf="item.virtual_meeting_link != ''" routerLink="/zoom-page"
+                  routerLinkActive="activebutton">
+                  <mat-icon>wifi</mat-icon>
+                </a>
+                <a mat-raised-button title="Share" color="primary">
+                  <mat-icon>share</mat-icon>
+                </a>
+
+              </mat-card-actions>
+            </mat-card>
+           </div>
+        </div>
+    </mat-tab>
+  </mat-tab-group>
+  </div>
+

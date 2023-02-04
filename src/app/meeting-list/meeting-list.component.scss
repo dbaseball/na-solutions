@@ -1,0 +1,39 @@
+.meet-page {
+  margin: auto;
+}
+
+.flex-container {
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+
+}
+
+.flex-item {
+  margin: 20px;
+  width: 450px;
+}
+
+
+
+.na-map-icon {
+  font-size: 24px;
+}
+
+h2 {
+  margin-left: 20px;
+  padding-top: 20px;
+
+}
+
+.dark {
+  fill: #000000;
+  stroke: #000000;
+}
+
+.light {
+  fill: #ffffff;
+  stroke: #ffffff;
+}
